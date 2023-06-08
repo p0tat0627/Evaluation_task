@@ -1,0 +1,10 @@
+A2.1
+- creating a docker file, which is a txt file, that contains instructions to build a docker image for the application, docker image is basically a software package that contains everything to run the software.
+- selecting the base image, which is the starting point of the docker file, for python application it will be the version that I am using to develop, for example, "FROM python:3.9"
+- working directory, which is basically the directory from where the commands will be set for the application, can be defined in the dockerfile as, "WORKDIR /app"
+- copy all the application files to the docker container, can be done by writing the instruction in the docker file as, "COPY . /app"
+- install dependencies, all the dependencies needed to create the app should be installed during the docker image building process, can be done by writing the following code in the docker file, "RUN pip install --no-cache-dir -r requirements.txt", where requirements.txt, in general, contains all the necessary dependencies.
+- setting up container running commands, like commanding the app to run whenever the container starts can be set up like this, 'CMD' as the default command and 'app.py' to run the main application, and Python as in general  for the Python application.
+- finally build the docker image, which can be done by navigating to the docker container directory and then running the following command, "docker build -t image-name .". At the end we can see a dot, which is basically the representation of, current directory.
+- once image building is done finally we can run the  docker with the following code, "docker run -it image-name"
+Here -it represents the interactive mode to interact with the docker container for the application.
