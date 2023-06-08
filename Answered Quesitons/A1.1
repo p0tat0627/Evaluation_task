@@ -1,0 +1,54 @@
+A1.1
+These are the general descriptions of my code that generate three objects by the , codes.
+- bpy module basically provides all the necessary access to control blender functionalities using Python scripts.
+- Then I had to denote vertices for the plane; as for 4 different vertices
+- faces denote the indices of the objects that are available for the plane; denoted that also
+- mesh is basically the fundamentals for a geometric object in blender object, defined that also 
+- Then I had to create the object using the defined mesh
+- linked the object for the viewport
+- Then finally created the mesh for the given vertices, faces and edges.
+
+code to generate plane:
+
+# import necessary packages to control blender functionalities
+import bpy
+
+verts = [(0,0,0), (0,2,0), (2,2,0), (2,0,0)]
+faces = [(0, 1, 2, 3)]
+
+mesh = bpy.data.meshes.new("Plane") # definition of the object
+object = bpy.data.objects.new("Plane", mesh) # creating the object
+
+bpy.context.collection.objects.link(object) # linking the object for the viewport
+
+mesh.from_pydata(verts, [], faces) # creation of the mesh by combining vertices and the faces
+
+
+code to generate a pyramid:
+# import necessary packages to control blender functionalities
+import bpy
+
+verts = [(0,0,0), (0,2,0), (2,2,0), (2,0,0), (1, 1, 3)]
+faces = [(0, 1, 2, 3), (0, 4, 1), (1, 4, 2), (2, 4, 3), (3, 4, 0)]
+
+mesh = bpy.data.meshes.new("Pyramid") # definition of the object
+object = bpy.data.objects.new("Pyramid", mesh) # creating the object
+
+bpy.context.collection.objects.link(object) # linking the object for the viewport
+
+mesh.from_pydata(verts, [], faces) # creation of the mesh by combining vertices and the faces
+
+
+code to generate a cube:
+# import necessary packages to control blender functionalities
+import bpy
+
+verts = [(0,0,0), (0,2,0), (2,2,0), (2,0,0), (0,0,2), (0,2,2), (2,2,2), (2,0,2)]
+faces = [(0, 1, 2, 3), (0, 4, 5, 1), (1, 5, 6, 2), (2, 6, 7, 3), (3, 7, 4, 0), (4, 5, 6, 7)]
+
+mesh = bpy.data.meshes.new("Cube") # definition of the object
+object = bpy.data.objects.new("Cube", mesh) # creating the object
+
+bpy.context.collection.objects.link(object) # linking the object for the viewport
+
+mesh.from_pydata(verts, [], faces) # creation of the mesh by combining vertices and the faces
