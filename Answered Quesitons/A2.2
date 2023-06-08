@@ -1,0 +1,10 @@
+A2.2
+- First of all a multi-container and  application means that different ,s or functionality of the application can be controlled by different a s, there are webserver containers, database containers, so on and forth. 
+- Docker compose is a tool that comes handy when controlling these multiple containers that have different functionalities of the application.
+- Installation of docker-compose is necessary which is automatically done when installing the docker.
+- the creation of the  file, which is a YAML file, now YAML is a human-readable data serializaiton file format, that follows indentation and so on, containing all the data configuration and data relationships, hierarchies. 
+- defining services, in the compose file it is required to define all the services that are done by the application, for example if the application is to serve web services and database,t, and have multiple docker containers to maintain those, then docker-compose file should include and say all those in the compose file. 
+- defining networks and volumes, this part is done to set communication between different containers and services.
+- if the Python application requires custom building of the docker image then 'build' command can be used to do so, and also same time if need to use pre-built image then 'image' is there to do it.
+- 'docker-compose up' command finally can be used to run the application
+- also provides additional commands to manage the application when necessary.
