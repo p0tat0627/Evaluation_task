@@ -1,0 +1,24 @@
+A1.2
+
+Purpose of bpy module:
+In general what I understood so far, bpy gives access to control all the blender functionalities using python. bpy gives a wide range of functionalities like object manipulation (setting properties for any objects and their creation, location, rotation, scale, operations like parenting, duplicating, linking); mesh editing (mesh basically defines the vertices, edges, and faces of any objects, bpy helps to define those and manipulate those); animation keyframing, rendering, output scene and data access these all are  controlled by bpy blender module of python.
+
+code snippet for transformation of an object:
+
+# import necessary packages to control blender functionalities
+import bpy
+import math
+
+# transformation manipulation
+obj = bpy.context.scene.objects["Suzanne"]
+obj.location.z += 1
+obj.scale.z += 1
+obj.rotation_euler.z += math.pi
+
+In this snippet,
+- first I got the context of the object by catching the name of the object as "Suzanne"
+- Then by using the obj.location.z and +=1, the object location get increased in the z axis and after running each time the script, the object basically moves 1 space up every time.
+- then by using the scale method, the object gets sclaed up for 1 space
+- after that rotation_euler used the math.pi to rotate 180 degree having z as the axis of the rotation.
+
+In this way different transformation methods usde for different types of manipulation of any blender object.
