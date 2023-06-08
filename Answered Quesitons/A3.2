@@ -1,0 +1,7 @@
+A3.2
+- first exporting a 3D model is necessary needed to use it in the three js application, to do so it needs to be exported in a way so that the application can understand the model, correct way to do it is using '.GLTF' format.
+- import three js library in the application folder. 
+- then load the exported model in the javascript file with the help of three.js file. three.js helps with a class named as GLTFLoader to load the .gltf model. then load() method is used from the class to load the model.
+- next part is adding the loaded model to the scene, it can simply be done by scene.add(model) method.
+- manipulation of different positions of the models can be done also in the same way with various methods like model.position.set(x, y, z).
+- setting up necessary components and then rendering loop, camera, lights are then used to render the scene to view the model in the three js application.
